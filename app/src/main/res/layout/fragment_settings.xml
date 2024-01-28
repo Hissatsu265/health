@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="settingsVM" type="com.hissatsusapplication.app.modules.settings.data.viewmodel.SettingsVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyle{&quot;name&quot;:&quot;teal_300&quot;}">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppBar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <LinearLayout android:id="@+id/linearGroup15"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <View
+                    android:background="@drawable/rectangle_bg_name_primary_radius_2"
+                    android:id="@+id/viewView"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_4pxh" android:layout_width="@dimen/_4pxh"/>
+                <View
+                    android:background="@drawable/rectangle_bg_name_primary_radius_2"
+                    android:id="@+id/viewView1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_4pxh" android:layout_width="@dimen/_4pxh"/>
+                <View
+                    android:background="@drawable/rectangle_bg_name_primary_radius_2"
+                    android:id="@+id/viewView2"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_4pxh" android:layout_width="@dimen/_4pxh"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:id="@+id/linearSettings"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <FrameLayout android:id="@+id/frameAmeliaRenata"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="@dimen/_226pxv" android:layout_width="@dimen/_290pxh">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtAmeliaRenata"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{settingsVM.settingsModel.txtAmeliaRenata}"
+                    style="@style/txtIntersemibold18_1" tools:text="@string/lbl_amelia_renata"/>
+                <LinearLayout android:id="@+id/linearProfileColumn"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="vertical">
+                    <FrameLayout android:id="@+id/frameProfileStack"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="@dimen/_80pxv" android:layout_width="@dimen/_80pxh">
+                        <ImageView android:id="@+id/imageProfile"
+                            android:layout_gravity="center"
+                            android:layout_height="@dimen/_80pxh"
+                            android:layout_width="@dimen/_80pxh"
+                            android:scaleType="centerCrop"
+                            circular="@{true}"
+                            imageRes="@{@drawable/img_profile}"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_profile"/>
+                        <FrameLayout android:id="@+id/frameCamecaIcon"
+                            android:layout_gravity="bottom|end"
+                            android:layout_height="@dimen/_16pxv"
+                            android:layout_width="@dimen/_16pxh"
+                            android:paddingHorizontal="@dimen/_3pxh"
+                            android:paddingVertical="@dimen/_3pxv" style="@style/groupStylenameprimarycornerRadius_1">
+                            <ImageView android:id="@+id/imageCamera"
+                                android:layout_gravity="center"
+                                android:layout_height="@dimen/_10pxh"
+                                android:layout_width="@dimen/_10pxh"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_camera"
+                                tools:ignore="ContentDescription" tools:src="@drawable/img_camera"/>
+                        </FrameLayout>
+                    </FrameLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:gravity="center_horizontal"
+                        android:id="@+id/recyclerSettings"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        itemSpace="@{@dimen/_61pxh}" tools:itemCount="3" tools:listitem="@layout/row_settings"/>
+                </LinearLayout>
+            </FrameLayout>
+            <LinearLayout android:id="@+id/linearTwo"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_31pxv"
+                android:paddingEnd="@dimen/_20pxh"
+                android:paddingStart="@dimen/_20pxh"
+                android:paddingTop="@dimen/_31pxv" style="@style/groupStylenameprimarycornerRadius_2">
+                <LinearLayout android:gravity="center_vertical"
+                    android:id="@+id/linearAppointmentRow"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <ImageButton
+                        android:background="@drawable/rectangle_bg_name_gray_50_01_radius_21"
+                        android:id="@+id/btnFavorite"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_43pxh"
+                        android:layout_width="@dimen/_43pxh"
+                        android:paddingHorizontal="@dimen/_9pxh"
+                        android:paddingVertical="@dimen/_9pxv"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_favorite" tools:ignore="ContentDescription"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtAppointment"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{settingsVM.settingsModel.txtAppointment}"
+                        style="@style/txtIntersemibold16" tools:text="@string/lbl_my_saved"/>
+                    <FrameLayout android:id="@+id/frameSpacer"
+                        android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+                    <ImageView android:id="@+id/imageArrowRight"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_24pxh"
+                        android:layout_width="@dimen/_24pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_arrow_right"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_arrow_right"/>
+                </LinearLayout>
+                <View
+                    android:background="@color/{&quot;name&quot;:&quot;gray_50_01&quot;}"
+                    android:id="@+id/lineDividerLineFour"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_1pxv" android:layout_width="@dimen/_335pxh"/>
+                <LinearLayout android:gravity="center_vertical"
+                    android:id="@+id/linearAppointmentRow1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <ImageButton
+                        android:background="@drawable/rectangle_bg_name_gray_50_01_radius_21"
+                        android:id="@+id/btnMegaphone"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_43pxh"
+                        android:layout_width="@dimen/_43pxh"
+                        android:paddingHorizontal="@dimen/_9pxh"
+                        android:paddingVertical="@dimen/_9pxv"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_megaphone" tools:ignore="ContentDescription"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtAppointment1"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{settingsVM.settingsModel.txtAppointment1}"
+                        style="@style/txtIntersemibold16" tools:text="@string/lbl_appointment"/>
+                    <FrameLayout android:id="@+id/frameSpacer1"
+                        android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+                    <ImageView android:id="@+id/imageArrowRight1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_24pxh"
+                        android:layout_width="@dimen/_24pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_arrow_right"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_arrow_right"/>
+                </LinearLayout>
+                <View
+                    android:background="@color/{&quot;name&quot;:&quot;gray_50_01&quot;}"
+                    android:id="@+id/lineDividerLineThree"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_1pxv" android:layout_width="@dimen/_335pxh"/>
+                <LinearLayout android:gravity="center_vertical"
+                    android:id="@+id/linearAppointmentRow2"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <ImageButton
+                        android:background="@drawable/rectangle_bg_name_gray_50_01_radius_21"
+                        android:id="@+id/btnThumbsUp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_43pxh"
+                        android:layout_width="@dimen/_43pxh"
+                        android:paddingHorizontal="@dimen/_9pxh"
+                        android:paddingVertical="@dimen/_9pxv"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_thumbs_up_cyan_300" tools:ignore="ContentDescription"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtAppointment2"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{settingsVM.settingsModel.txtAppointment2}"
+                        style="@style/txtIntersemibold16" tools:text="@string/lbl_payment_method"/>
+                    <FrameLayout android:id="@+id/frameSpacer2"
+                        android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+                    <ImageView android:id="@+id/imageArrowRight2"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_24pxh"
+                        android:layout_width="@dimen/_24pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_arrow_right"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_arrow_right"/>
+                </LinearLayout>
+                <View
+                    android:background="@color/{&quot;name&quot;:&quot;gray_50_01&quot;}"
+                    android:id="@+id/lineDividerLineTwo"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_1pxv" android:layout_width="@dimen/_335pxh"/>
+                <LinearLayout android:gravity="center_vertical"
+                    android:id="@+id/linearAppointmentRow3"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <ImageButton
+                        android:background="@drawable/rectangle_bg_name_gray_50_01_radius_21"
+                        android:id="@+id/btnUser"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_43pxh"
+                        android:layout_width="@dimen/_43pxh"
+                        android:paddingHorizontal="@dimen/_9pxh"
+                        android:paddingVertical="@dimen/_9pxv"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_user_cyan_300_43x43" tools:ignore="ContentDescription"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtAppointment3"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{settingsVM.settingsModel.txtAppointment3}"
+                        style="@style/txtIntersemibold16" tools:text="@string/lbl_faqs"/>
+                    <FrameLayout android:id="@+id/frameSpacer3"
+                        android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+                    <ImageView android:id="@+id/imageArrowRight3"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_24pxh"
+                        android:layout_width="@dimen/_24pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_arrow_right"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_arrow_right"/>
+                </LinearLayout>
+                <View
+                    android:background="@color/{&quot;name&quot;:&quot;gray_50_01&quot;}"
+                    android:id="@+id/lineDividerLineOne"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_1pxv" android:layout_width="@dimen/_335pxh"/>
+                <LinearLayout android:gravity="center_vertical"
+                    android:id="@+id/linearAppointmentRow4"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <ImageButton
+                        android:background="@drawable/rectangle_bg_name_gray_50_01_radius_21"
+                        android:id="@+id/btnVideoCamera"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_43pxh"
+                        android:layout_width="@dimen/_43pxh"
+                        android:paddingHorizontal="@dimen/_9pxh"
+                        android:paddingVertical="@dimen/_9pxv"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_video_camera" tools:ignore="ContentDescription"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtAppointment4"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{settingsVM.settingsModel.txtAppointment4}"
+                        style="@style/txtIntersemibold16" tools:text="@string/lbl_help"/>
+                    <FrameLayout android:id="@+id/frameSpacer4"
+                        android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+                    <ImageView android:id="@+id/imageArrowRight4"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_24pxh"
+                        android:layout_width="@dimen/_24pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_arrow_right"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_arrow_right"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

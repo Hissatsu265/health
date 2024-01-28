@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="ambulanceVM" type="com.hissatsusapplication.app.modules.ambulance.data.viewmodel.AmbulanceVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearAmbulance"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyle{&quot;name&quot;:&quot;primary&quot;}">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppBar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <ImageView android:id="@+id/imageArrowLeft"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_arrow_left"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_arrow_left"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtTopDoctor"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{ambulanceVM.ambulanceModel.txtTopDoctor}"
+                style="@style/txtIntersemibold16" tools:text="@string/lbl_ambulance"/>
+        </androidx.appcompat.widget.Toolbar>
+        <fragment android:gravity="center_horizontal"
+            android:id="@+id/mapMap"
+            android:layout_height="@dimen/_710pxv"
+            android:layout_width="match_parent" android:name="com.google.android.gms.maps.SupportMapFragment"/>
+    </LinearLayout>
+</layout>

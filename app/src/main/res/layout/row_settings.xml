@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="settingsRowModel" type="com.hissatsusapplication.app.modules.settings.data.model.SettingsRowModel"/>
+    </data>
+    <LinearLayout android:id="@+id/linearHeartRate"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:orientation="vertical">
+        <ImageView android:id="@+id/imageHeartrate"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_32pxh"
+            android:layout_width="@dimen/_32pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_television"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_television"/>
+        <TextView android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:id="@+id/txtHeartRate"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:text="@{settingsRowModel.txtHeartRate}"
+            style="@style/txtIntersemibold10_1" tools:text="@string/lbl_heart_rate"/>
+        <TextView android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:id="@+id/txtHeartRateCount"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:text="@{settingsRowModel.txtHeartRateCount}"
+            style="@style/txtIntersemibold16_1" tools:text="@string/lbl_215bpm"/>
+    </LinearLayout>
+</layout>
