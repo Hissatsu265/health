@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="pharmacyVM" type="com.hissatsusapplication.app.modules.pharmacy.data.viewmodel.PharmacyVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearPharmacy"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyle{&quot;name&quot;:&quot;primary&quot;}">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppBar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <ImageView android:id="@+id/imageArrowLeft"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_arrow_left"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_arrow_left"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtTopDoctor"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{pharmacyVM.pharmacyModel.txtTopDoctor}"
+                style="@style/txtIntersemibold16" tools:text="@string/lbl_pharmacy"/>
+            <ImageView android:id="@+id/imageCart"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_cart"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_cart"/>
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:id="@+id/linearUploadPrescription"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_24pxv" android:paddingTop="@dimen/_24pxv">
+            <androidx.appcompat.widget.SearchView
+                android:background="@drawable/rectangle_bg_name_gray_50_border_name_gray_50_01_radius_8"
+                android:gravity="center_horizontal"
+                android:id="@+id/searchViewSearch"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:theme="@style/searchViewsearch"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@android:color/transparent"
+                app:queryHint="@string/msg_search_drug_category" app:searchIcon="@drawable/img_contrast"/>
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearOfferBanner"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_12pxv"
+                android:paddingEnd="@dimen/_26pxh"
+                android:paddingStart="@dimen/_26pxh"
+                android:paddingTop="@dimen/_12pxv" style="@style/groupStyle{&quot;name&quot;:&quot;teal_50&quot;}cornerRadius">
+                <TextView android:id="@+id/txtEarlyProtection"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@{pharmacyVM.pharmacyModel.txtEarlyProtection}"
+                    style="@style/txtIntersemibold18" tools:text="@string/msg_order_quickly_w"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:background="@drawable/rectangle_bg_name_cyan_300_radius_4"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/inter"
+                    android:gravity="center"
+                    android:id="@+id/btnUploadPrescription"
+                    android:layout_height="@dimen/_26pxv"
+                    android:layout_width="@dimen/_155pxh"
+                    android:paddingBottom="@dimen/_5pxv"
+                    android:paddingEnd="@dimen/_20pxh"
+                    android:paddingStart="@dimen/_20pxh"
+                    android:paddingTop="@dimen/_5pxv"
+                    android:singleLine="true"
+                    android:text="@string/msg_upload_prescription"
+                    android:textAllCaps="false"
+                    android:textColor="@color/{&quot;name&quot;:&quot;primary&quot;}"
+                    android:textFontWeight="600"
+                    android:textSize="@dimen/_12pxh"
+                    android:textStyle="bold" tools:text="@string/msg_upload_prescription"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearPopularProduct"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtProductText"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{pharmacyVM.pharmacyModel.txtProductText}"
+                    style="@style/txtIntersemibold16_3" tools:text="@string/lbl_popular_product"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtSeeAllText"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{pharmacyVM.pharmacyModel.txtSeeAllText}"
+                    style="@style/txtIntermedium12" tools:text="@string/lbl_see_all"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:gravity="end" android:id="@+id/recyclerDrugs"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                itemSpace="@{@dimen/_21pxh}" tools:itemCount="3" tools:listitem="@layout/row_drugs"/>
+            <LinearLayout android:id="@+id/linearProductOnSale"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtProductText1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{pharmacyVM.pharmacyModel.txtProductText1}"
+                    style="@style/txtIntersemibold16_3" tools:text="@string/lbl_product_on_sale"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtSeeAllText1"
+                    android:layout_gravity="top"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{pharmacyVM.pharmacyModel.txtSeeAllText1}"
+                    style="@style/txtIntermedium12" tools:text="@string/lbl_see_all"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:gravity="end" android:id="@+id/recyclerDrugs1"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                itemSpace="@{@dimen/_18pxh}" tools:itemCount="3" tools:listitem="@layout/row_drugs1"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

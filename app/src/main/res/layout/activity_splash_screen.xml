@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="splashScreenVM" type="com.hissatsusapplication.app.modules.splashscreen.data.viewmodel.SplashScreenVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearSplashScreen"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_46pxv"
+        android:paddingEnd="@dimen/_17pxh"
+        android:paddingStart="@dimen/_17pxh"
+        android:paddingTop="@dimen/_46pxv" style="@style/groupStyle{&quot;name&quot;:&quot;cyan_300&quot;}">
+        <FrameLayout android:id="@+id/frameSpacer"
+            android:layout_height="wrap_content" android:layout_width="match_parent"/>
+        <ImageView android:id="@+id/imageHiDocLogo"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_368pxh"
+            android:layout_width="@dimen/_338pxh"
+            android:scaleType="fitXY"
+            imageRes="@{@drawable/img_hi_doc_logo}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_hi_doc_logo"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/rectangle_border_name_primary_radius_8"
+            android:ellipsize="end" android:fontFamily="@font/inter"
+            android:gravity="center" android:id="@+id/btnLogin"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:lineSpacingExtra="@dimen/_3pxh"
+            android:paddingBottom="@dimen/_16pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_16pxv" android:singleLine="true"
+            android:text="@string/lbl_login" android:textAllCaps="false"
+            android:textColor="@color/{&quot;name&quot;:&quot;primary&quot;}"
+            android:textFontWeight="600"
+            android:textSize="@dimen/_14pxh" android:textStyle="bold" tools:text="@string/lbl_login"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/rectangle_bg_name_primary_radius_8"
+            android:ellipsize="end" android:fontFamily="@font/inter"
+            android:gravity="center" android:id="@+id/btnSignUp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/_16pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_16pxv" android:singleLine="true"
+            android:text="@string/lbl_sign_up"
+            android:textAllCaps="false"
+            android:textColor="@color/{&quot;name&quot;:&quot;teal_300&quot;}"
+            android:textFontWeight="700"
+            android:textSize="@dimen/_14pxh" android:textStyle="bold" tools:text="@string/lbl_sign_up"/>
+    </LinearLayout>
+</layout>

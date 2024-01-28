@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="drugs1RowModel" type="com.hissatsusapplication.app.modules.pharmacy.data.model.Drugs1RowModel"/>
+    </data>
+    <LinearLayout android:gravity="start" android:id="@+id/linearDrugs"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_7pxv"
+        android:paddingEnd="@dimen/_6pxh"
+        android:paddingStart="@dimen/_6pxh"
+        android:paddingTop="@dimen/_7pxv" style="@style/groupStyle{&quot;name&quot;:&quot;primary&quot;}cornerRadius">
+        <ImageView android:id="@+id/imageOBHCombi"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_50pxh"
+            android:layout_width="@dimen/_50pxh"
+            android:scaleType="centerCrop" circular="@{true}"
+            imageRes="@{@drawable/img_drug_thumbnail_1}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_drug_thumbnail_1"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtPanadol"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:text="@{drugs1RowModel.txtPanadol}"
+            style="@style/txtIntersemibold12_1" tools:text="@string/lbl_obh_combi"/>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtMeasurement"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{drugs1RowModel.txtMeasurement}"
+            style="@style/txtIntermedium10" tools:text="@string/lbl_75ml"/>
+        <LinearLayout android:id="@+id/linearEightyThree"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:orientation="horizontal">
+            <TextView android:ellipsize="end" android:id="@+id/txtPrice"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{drugs1RowModel.txtPrice}"
+                style="@style/txtIntersemibold14_1" tools:text="@string/lbl_9_99"/>
+            <ImageButton android:id="@+id/btnFacebook"
+                android:layout_gravity="top"
+                android:layout_height="@dimen/_18pxh"
+                android:layout_width="@dimen/_18pxh"
+                android:paddingHorizontal="@dimen/_5pxh"
+                android:paddingVertical="@dimen/_5pxv"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_facebook_primary" tools:ignore="ContentDescription"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

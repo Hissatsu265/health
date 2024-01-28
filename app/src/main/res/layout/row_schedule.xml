@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="scheduleRowModel" type="com.hissatsusapplication.app.modules.schedule.data.model.ScheduleRowModel"/>
+    </data>
+    <LinearLayout android:gravity="start"
+        android:id="@+id/linearSchedule"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_11pxv"
+        android:paddingEnd="@dimen/_14pxh"
+        android:paddingStart="@dimen/_14pxh"
+        android:paddingTop="@dimen/_11pxv" style="@style/groupStylenameprimarycornerRadius_5">
+        <LinearLayout android:id="@+id/linearEightyEight"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearSeventy"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:orientation="vertical">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtDrMarcusHorizon"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{scheduleRowModel.txtDrMarcusHorizon}"
+                    style="@style/txtIntersemibold18" tools:text="@string/msg_dr_marcus_horizon"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtChardiologist"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{scheduleRowModel.txtChardiologist}"
+                    style="@style/txtIntermedium12_2" tools:text="@string/lbl_chardiologist"/>
+            </LinearLayout>
+            <ImageView android:id="@+id/imageDrMarcusHorizon"
+                android:layout_gravity="center_vertical"
+                android:layout_height="@dimen/_46pxh"
+                android:layout_width="@dimen/_46pxh"
+                android:scaleType="centerCrop" circular="@{true}"
+                imageRes="@{@drawable/img_ellipse_27image_46x46}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse_27image_46x46"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/linearTime"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <LinearLayout android:id="@+id/linearDate"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageImage"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_15pxh"
+                    android:layout_width="@dimen/_15pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_calendar_onprimary"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_calendar_onprimary"/>
+                <TextView android:ellipsize="end"
+                    android:gravity="bottom" android:id="@+id/txtDate"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{scheduleRowModel.txtDate}"
+                    style="@style/txtIntermedium12_3" tools:text="@string/lbl_26_06_2021"/>
+            </LinearLayout>
+            <ImageView android:id="@+id/imageAM"
+                android:layout_gravity="center_vertical"
+                android:layout_height="@dimen/_15pxh"
+                android:layout_width="@dimen/_15pxh"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_clock"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_clock"/>
+            <TextView android:ellipsize="end" android:id="@+id/txtTime"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{scheduleRowModel.txtTime}"
+                style="@style/txtIntermedium12_3" tools:text="@string/lbl_10_30_am"/>
+            <View
+                android:background="@drawable/rectangle_bg_name_errorcontainer_radius_3"
+                android:id="@+id/viewView"
+                android:layout_gravity="bottom"
+                android:layout_height="@dimen/_6pxh" android:layout_width="@dimen/_6pxh"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtConfirmed"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{scheduleRowModel.txtConfirmed}"
+                style="@style/txtIntermedium12_3" tools:text="@string/lbl_confirmed"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical"
+            android:id="@+id/linearNinetyThree"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/rectangle_bg_name_gray_50_01_radius_8"
+                android:ellipsize="end" android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:id="@+id/btnCancelButton"
+                android:layout_gravity="center_vertical"
+                android:layout_height="@dimen/_50pxv"
+                android:layout_width="@dimen/_145pxh"
+                android:paddingBottom="@dimen/_16pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_16pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/{&quot;name&quot;:&quot;onPrimary&quot;}"
+                android:textFontWeight="700"
+                android:textSize="@dimen/_14pxh"
+                android:textStyle="bold" tools:text="@string/lbl_cancel"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/rectangle_bg_name_cyan_300_radius_8"
+                android:ellipsize="end" android:fontFamily="@font/inter"
+                android:gravity="center"
+                android:id="@+id/btnRescheduleButton"
+                android:layout_gravity="center_vertical"
+                android:layout_height="@dimen/_50pxv"
+                android:layout_width="@dimen/_145pxh"
+                android:paddingBottom="@dimen/_16pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_16pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_reschedule"
+                android:textAllCaps="false"
+                android:textColor="@color/{&quot;name&quot;:&quot;primary&quot;}"
+                android:textFontWeight="700"
+                android:textSize="@dimen/_14pxh"
+                android:textStyle="bold" tools:text="@string/lbl_reschedule"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="relatedarticlesRowModel" type="com.hissatsusapplication.app.modules.article.data.model.RelatedarticlesRowModel"/>
+    </data>
+    <LinearLayout android:id="@+id/linearArticle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_4pxh"
+        android:paddingVertical="@dimen/_4pxv" style="@style/groupStylenameprimarycornerRadius_4">
+        <ImageView android:id="@+id/imageImage1"
+            android:layout_height="@dimen/_59pxh"
+            android:layout_width="@dimen/_59pxh"
+            android:scaleType="fitXY" cornerRadius="@{@dimen/_6pxh}"
+            imageRes="@{@drawable/img_thumbnail}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_thumbnail"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearTwentyFive"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:orientation="vertical">
+            <TextView android:id="@+id/txtTheHealthiest"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@{relatedarticlesRowModel.txtTheHealthiest}"
+                style="@style/txtIntersemibold12" tools:text="@string/msg_the_25_healthiest"/>
+            <LinearLayout android:id="@+id/linearEightyEight"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtDate"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{relatedarticlesRowModel.txtDate}"
+                    style="@style/txtIntermedium8_2" tools:text="@string/lbl_jun_10_2021"/>
+                <View
+                    android:background="@drawable/rectangle_bg_name_gray_500_radius_1"
+                    android:id="@+id/viewView"
+                    android:layout_height="@dimen/_2pxh" android:layout_width="@dimen/_2pxh"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtTime"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{relatedarticlesRowModel.txtTime}"
+                    style="@style/txtIntermedium8" tools:text="@string/lbl_5min_read"/>
+            </LinearLayout>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/frameSpacer"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+        <ImageView android:id="@+id/imageImage2"
+            android:layout_height="@dimen/_15pxh"
+            android:layout_width="@dimen/_15pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_bookmark_cyan_300"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_bookmark_cyan_300"/>
+    </LinearLayout>
+</layout>

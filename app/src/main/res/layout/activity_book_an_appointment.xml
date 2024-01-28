@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="bookAnAppointmentVM" type="com.hissatsusapplication.app.modules.bookanappointment.data.viewmodel.BookAnAppointmentVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearBooking"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyle{&quot;name&quot;:&quot;primary&quot;}">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppBar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <ImageView android:id="@+id/imageArrowLeft"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_arrow_left"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_arrow_left"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtTopDoctor"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtTopDoctor}"
+                style="@style/txtIntersemibold16" tools:text="@string/lbl_appointment"/>
+            <ImageView android:id="@+id/imageNotification"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_notification"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_notification"/>
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearBookAnAppointment"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_24pxv"
+            android:paddingEnd="@dimen/_20pxh"
+            android:paddingStart="@dimen/_20pxh" android:paddingTop="@dimen/_24pxv">
+            <LinearLayout android:id="@+id/linearDoctorDetails"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/_6pxv"
+                android:paddingEnd="@dimen/_7pxh"
+                android:paddingStart="@dimen/_7pxh"
+                android:paddingTop="@dimen/_6pxv" style="@style/groupStylecornerRadius_1">
+                <ImageView android:id="@+id/imageProfilePic"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_111pxh"
+                    android:layout_width="@dimen/_111pxh"
+                    android:scaleType="fitXY"
+                    cornerRadius="@{@dimen/_12pxh}"
+                    imageRes="@{@drawable/img_profile_pic}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_profile_pic"/>
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearFiftyFive"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:orientation="vertical">
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtTitle"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:singleLine="true"
+                        android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtTitle}"
+                        style="@style/txtIntersemibold18" tools:text="@string/msg_dr_marcus_horizon"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtChardiologist"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtChardiologist}"
+                        style="@style/txtIntermedium12_2" tools:text="@string/lbl_chardiologist"/>
+                    <LinearLayout android:id="@+id/linearRatting"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:orientation="horizontal">
+                        <ImageView android:id="@+id/imageSignal"
+                            android:layout_gravity="center_vertical"
+                            android:layout_height="@dimen/_13pxh"
+                            android:layout_width="@dimen/_13pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_signal"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_signal"/>
+                        <TextView android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:id="@+id/txtRatting"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtRatting}"
+                            style="@style/txtIntermedium12" tools:text="@string/lbl_4_72"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/linearDistance"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:orientation="horizontal">
+                        <ImageView android:id="@+id/imageLinkedin"
+                            android:layout_gravity="top"
+                            android:layout_height="@dimen/_13pxh"
+                            android:layout_width="@dimen/_13pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_linkedin"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_linkedin"/>
+                        <TextView android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:id="@+id/txtDistance"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtDistance}"
+                            style="@style/txtIntermedium12_2" tools:text="@string/lbl_800m_away"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearDateDetails"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtDate"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtDate}"
+                    style="@style/txtIntersemibold16" tools:text="@string/lbl_date"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtChange"
+                    android:layout_gravity="top"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtChange}"
+                    style="@style/txtInterregular12" tools:text="@string/lbl_change"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearDateDetails1"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <ImageButton
+                    android:background="@drawable/rectangle_bg_name_gray_50_01_radius_18"
+                    android:id="@+id/btnCalendar"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_36pxh"
+                    android:layout_width="@dimen/_36pxh"
+                    android:paddingHorizontal="@dimen/_8pxh"
+                    android:paddingVertical="@dimen/_8pxv"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_calendar_cyan_300" tools:ignore="ContentDescription"/>
+                <TextView android:ellipsize="end"
+                    android:gravity="bottom" android:id="@+id/txtPrice"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtPrice}"
+                    style="@style/txtIntersemibold14" tools:text="@string/msg_wednesday_jun_23"/>
+            </LinearLayout>
+            <View
+                android:background="@color/{&quot;name&quot;:&quot;teal_50&quot;}"
+                android:id="@+id/lineDividerLine"
+                android:layout_height="@dimen/_1pxv" android:layout_width="@dimen/_335pxh"/>
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearReason"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <LinearLayout android:id="@+id/linearConsultation"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtConsultationText"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtConsultationText}"
+                        style="@style/txtIntersemibold16" tools:text="@string/lbl_reason"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtPriceText"
+                        android:layout_gravity="top"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtPriceText}"
+                        style="@style/txtInterregular12" tools:text="@string/lbl_change"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearReason1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:orientation="horizontal">
+                    <ImageButton
+                        android:background="@drawable/rectangle_bg_name_gray_50_01_radius_18"
+                        android:id="@+id/btnEditIcon"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="@dimen/_36pxh"
+                        android:layout_width="@dimen/_36pxh"
+                        android:paddingHorizontal="@dimen/_8pxh"
+                        android:paddingVertical="@dimen/_8pxv"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_edit_icon" tools:ignore="ContentDescription"/>
+                    <TextView android:ellipsize="end"
+                        android:gravity="bottom"
+                        android:id="@+id/txtChestPain"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:singleLine="true"
+                        android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtChestPain}"
+                        style="@style/txtIntersemibold14" tools:text="@string/lbl_chest_pain"/>
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:background="@color/{&quot;name&quot;:&quot;teal_50&quot;}"
+                android:id="@+id/lineDividerLine1"
+                android:layout_height="@dimen/_1pxv" android:layout_width="@dimen/_335pxh"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtPaymentDetail"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtPaymentDetail}"
+                style="@style/txtIntersemibold16" tools:text="@string/lbl_payment_detail"/>
+            <LinearLayout android:id="@+id/linearConsultation1"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtConsultationText1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtConsultationText1}"
+                    style="@style/txtInterregular14" tools:text="@string/lbl_consultation"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtPriceText1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtPriceText1}"
+                    style="@style/txtInterregular14" tools:text="@string/lbl_60_00"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearConsultation2"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtConsultationText2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtConsultationText2}"
+                    style="@style/txtInterregular14" tools:text="@string/lbl_admin_fee"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtPriceText2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtPriceText2}"
+                    style="@style/txtInterregular14" tools:text="@string/lbl_01_00"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearConsultation3"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtConsultationText3"
+                    android:layout_gravity="top"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtConsultationText3}"
+                    style="@style/txtInterregular14" tools:text="@string/msg_aditional_discount"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtPriceText3"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtPriceText3}"
+                    style="@style/txtInterregular14" tools:text="@string/lbl"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearConsultation4"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtConsultationText4"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtConsultationText4}"
+                    style="@style/txtIntersemibold14" tools:text="@string/lbl_total"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtPriceText4"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtPriceText4}"
+                    style="@style/txtIntersemibold14" tools:text="@string/lbl_61_00"/>
+            </LinearLayout>
+            <View
+                android:background="@color/{&quot;name&quot;:&quot;teal_50&quot;}"
+                android:id="@+id/lineDividerLine2"
+                android:layout_height="@dimen/_1pxv" android:layout_width="@dimen/_335pxh"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtPaymentMethod"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtPaymentMethod}"
+                style="@style/txtIntersemibold16" tools:text="@string/lbl_payment_method"/>
+            <LinearLayout android:id="@+id/linearConsultation5"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_13pxh"
+                android:paddingVertical="@dimen/_13pxv" style="@style/groupStylenameprimarycornerRadius_3">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtConsultationText5"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtConsultationText5}"
+                    style="@style/txtInterblackitalic16" tools:text="@string/lbl_visa"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtPriceText5"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtPriceText5}"
+                    style="@style/txtInterregular12" tools:text="@string/lbl_change"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/linearPrice"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearPrice1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:orientation="vertical">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtTotal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtTotal}"
+                    style="@style/txtIntermedium14" tools:text="@string/lbl_total"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtPrice1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{bookAnAppointmentVM.bookAnAppointmentModel.txtPrice1}"
+                    style="@style/txtIntersemibold18" tools:text="@string/lbl_61_002"/>
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/rectangle_bg_name_cyan_300_radius_8"
+                android:ellipsize="end" android:fontFamily="@font/inter"
+                android:gravity="center" android:id="@+id/btnBooking"
+                android:layout_height="@dimen/_50pxv"
+                android:layout_width="@dimen/_192pxh"
+                android:paddingBottom="@dimen/_16pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_16pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_booking"
+                android:textAllCaps="false"
+                android:textColor="@color/{&quot;name&quot;:&quot;primary&quot;}"
+                android:textFontWeight="700"
+                android:textSize="@dimen/_14pxh"
+                android:textStyle="bold" tools:text="@string/lbl_booking"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

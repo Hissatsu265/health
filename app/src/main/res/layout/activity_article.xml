@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="articleVM" type="com.hissatsusapplication.app.modules.article.data.viewmodel.ArticleVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearArticle"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyle{&quot;name&quot;:&quot;primary&quot;}">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppBar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <ImageView android:id="@+id/imageArrowLeft"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_arrow_left"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_arrow_left"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtTopDoctor"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{articleVM.articleModel.txtTopDoctor}"
+                style="@style/txtIntersemibold16" tools:text="@string/lbl_articles"/>
+            <ImageView android:id="@+id/imageNotification"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_notification"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_notification"/>
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearSearch"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_24pxv"
+            android:paddingEnd="@dimen/_20pxh"
+            android:paddingStart="@dimen/_20pxh" android:paddingTop="@dimen/_24pxv">
+            <androidx.appcompat.widget.SearchView
+                android:background="@drawable/rectangle_bg_name_gray_50_border_name_gray_50_01_radius_8"
+                android:id="@+id/searchViewSearch"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:theme="@style/searchViewsearch"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@android:color/transparent"
+                app:queryHint="@string/msg_search_article" app:searchIcon="@drawable/img_contrast"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtPopularArticles"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{articleVM.articleModel.txtPopularArticles}"
+                style="@style/txtIntersemibold16_3" tools:text="@string/msg_popular_articles"/>
+            <FrameLayout android:id="@+id/frameTopics"
+                android:layout_height="wrap_content" android:layout_width="match_parent">
+                <FrameLayout
+                    android:background="@drawable/rectangle_bg_name_cyan_300_radius_10"
+                    android:id="@+id/frameCovidNineteen"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:paddingBottom="@dimen/_16pxv"
+                    android:paddingEnd="@dimen/_26pxh"
+                    android:paddingStart="@dimen/_26pxh" android:paddingTop="@dimen/_16pxv"/>
+                <FrameLayout
+                    android:background="@drawable/rectangle_bg_name_cyan_300_radius_10"
+                    android:id="@+id/frameDiet"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:paddingBottom="@dimen/_16pxv"
+                    android:paddingEnd="@dimen/_30pxh"
+                    android:paddingStart="@dimen/_30pxh" android:paddingTop="@dimen/_16pxv"/>
+                <FrameLayout
+                    android:background="@drawable/rectangle_bg_name_cyan_300_radius_10"
+                    android:id="@+id/frameFitness"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:paddingBottom="@dimen/_16pxv"
+                    android:paddingEnd="@dimen/_26pxh"
+                    android:paddingStart="@dimen/_26pxh" android:paddingTop="@dimen/_16pxv"/>
+            </FrameLayout>
+            <LinearLayout android:id="@+id/linearTrendingArticles"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtTrendingArticles"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{articleVM.articleModel.txtTrendingArticles}"
+                    style="@style/txtIntersemibold16_3" tools:text="@string/msg_trending_articles"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtSeeAll"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{articleVM.articleModel.txtSeeAll}"
+                    style="@style/txtIntermedium12" tools:text="@string/lbl_see_all"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerTrendings"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                itemSpace="@{@dimen/_17pxh}" tools:itemCount="2" tools:listitem="@layout/row_trendings"/>
+            <LinearLayout android:id="@+id/linearRelatedArticles"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtRelatedArticles"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{articleVM.articleModel.txtRelatedArticles}"
+                    style="@style/txtIntersemibold16_3" tools:text="@string/msg_related_articles"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtSeeAll1"
+                    android:layout_gravity="top"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{articleVM.articleModel.txtSeeAll1}"
+                    style="@style/txtIntermedium12" tools:text="@string/lbl_see_all"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerRelatedArticles"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                itemSpace="@{@dimen/_10pxh}" tools:itemCount="2" tools:listitem="@layout/row_relatedarticles"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

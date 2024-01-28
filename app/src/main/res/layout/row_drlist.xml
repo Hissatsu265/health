@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="drlistRowModel" type="com.hissatsusapplication.app.modules.drlist.data.model.DrlistRowModel"/>
+    </data>
+    <LinearLayout android:id="@+id/linearCard"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_6pxv"
+        android:paddingEnd="@dimen/_7pxh"
+        android:paddingStart="@dimen/_7pxh"
+        android:paddingTop="@dimen/_6pxv" style="@style/groupStylenameprimarycornerRadius_3">
+        <ImageView android:id="@+id/imageDrMarcusHorizon"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/_111pxh"
+            android:layout_width="@dimen/_111pxh"
+            android:scaleType="fitXY" cornerRadius="@{@dimen/_12pxh}"
+            imageRes="@{@drawable/img_profile_pic}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_profile_pic"/>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearSixtyNine"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:orientation="vertical">
+            <TextView android:ellipsize="end" android:id="@+id/txtTitle"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{drlistRowModel.txtTitle}"
+                style="@style/txtIntersemibold18" tools:text="@string/msg_dr_marcus_horizon"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtChardiologist"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{drlistRowModel.txtChardiologist}"
+                style="@style/txtIntermedium12_2" tools:text="@string/lbl_chardiologist"/>
+            <LinearLayout android:id="@+id/linearRatting"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageImage"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_13pxh"
+                    android:layout_width="@dimen/_13pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_signal"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_signal"/>
+                <TextView android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:id="@+id/txtRatting"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{drlistRowModel.txtRatting}"
+                    style="@style/txtIntermedium12" tools:text="@string/lbl_4_72"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearDistance"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageMaway"
+                    android:layout_gravity="top"
+                    android:layout_height="@dimen/_13pxh"
+                    android:layout_width="@dimen/_13pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_linkedin"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_linkedin"/>
+                <TextView android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:id="@+id/txtDistance"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{drlistRowModel.txtDistance}"
+                    style="@style/txtIntermedium12_2" tools:text="@string/lbl_800m_away"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

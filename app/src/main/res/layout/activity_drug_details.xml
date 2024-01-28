@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="drugDetailsVM" type="com.hissatsusapplication.app.modules.drugdetails.data.viewmodel.DrugDetailsVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearBuyNow"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyle{&quot;name&quot;:&quot;primary&quot;}">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppBar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <ImageView android:id="@+id/imageArrowLeft"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_arrow_left"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_arrow_left"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtTopDoctor"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{drugDetailsVM.drugDetailsModel.txtTopDoctor}"
+                style="@style/txtIntersemibold16" tools:text="@string/lbl_drugs_details"/>
+            <ImageView android:id="@+id/imageCart"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_cart"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_cart"/>
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:id="@+id/linearDrugDetails"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_24pxv"
+            android:paddingEnd="@dimen/_20pxh"
+            android:paddingStart="@dimen/_20pxh" android:paddingTop="@dimen/_24pxv">
+            <ImageView android:id="@+id/imageDrugImage"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="@dimen/_147pxh"
+                android:layout_width="@dimen/_147pxh"
+                android:scaleType="centerCrop" circular="@{true}"
+                imageRes="@{@drawable/img_drug_image}"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_drug_image"/>
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearDrugDetails1"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <LinearLayout android:id="@+id/linearThirtyTwo"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <LinearLayout android:gravity="start"
+                        android:id="@+id/linearNineteen"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:orientation="vertical">
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtOBHCombi"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:singleLine="true"
+                            android:text="@{drugDetailsVM.drugDetailsModel.txtOBHCombi}"
+                            style="@style/txtIntersemibold20" tools:text="@string/lbl_obh_combi"/>
+                        <TextView android:ellipsize="end"
+                            android:id="@+id/txtMeasurement"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:singleLine="true"
+                            android:text="@{drugDetailsVM.drugDetailsModel.txtMeasurement}"
+                            style="@style/txtIntersemibold16_4" tools:text="@string/lbl_75ml"/>
+                    </LinearLayout>
+                    <ImageView android:id="@+id/imageFavorite"
+                        android:layout_gravity="bottom"
+                        android:layout_height="@dimen/_24pxh"
+                        android:layout_width="@dimen/_24pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_favorite_primarycontainer"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_favorite_primarycontainer"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearSeventyNine"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                        android:id="@+id/ratingBarRatingBar"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:numStars="4" android:rating="0" style="@style/Widget.AppCompat.RatingBar.Small"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtRatting"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{drugDetailsVM.drugDetailsModel.txtRatting}"
+                        style="@style/txtIntersemibold14_2" tools:text="@string/lbl_4_0"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearTwentySix"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <ImageView android:id="@+id/imageImage"
+                        android:layout_gravity="top"
+                        android:layout_height="@dimen/_32pxh"
+                        android:layout_width="@dimen/_32pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_component_3"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_component_3"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtQuantityCount"
+                        android:layout_gravity="top"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{drugDetailsVM.drugDetailsModel.txtQuantityCount}"
+                        style="@style/txtIntersemibold24" tools:text="@string/lbl_1"/>
+                    <ImageButton android:id="@+id/btnFacebook"
+                        android:layout_gravity="top"
+                        android:layout_height="@dimen/_32pxh"
+                        android:layout_width="@dimen/_32pxh"
+                        android:paddingHorizontal="@dimen/_8pxh"
+                        android:paddingVertical="@dimen/_8pxv"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_facebook_primary" tools:ignore="ContentDescription"/>
+                    <FrameLayout android:id="@+id/frameSpacer"
+                        android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtPrice"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{drugDetailsVM.drugDetailsModel.txtPrice}"
+                        style="@style/txtIntersemibold24" tools:text="@string/lbl_9_99"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearDrugDescription"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingEnd="@dimen/_1pxh" android:paddingStart="@dimen/_1pxh">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtDescription"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{drugDetailsVM.drugDetailsModel.txtDescription}"
+                    style="@style/txtIntersemibold16" tools:text="@string/lbl_description"/>
+                <FrameLayout android:id="@+id/frameOBHCOMBIIsACough"
+                    android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical"
+            android:id="@+id/linearBuyNow1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <ImageButton
+                android:background="@drawable/rectangle_bg_name_gray_50_01_radius_8"
+                android:id="@+id/btnCart"
+                android:layout_gravity="center_vertical"
+                android:layout_height="@dimen/_50pxh"
+                android:layout_width="@dimen/_50pxh"
+                android:paddingHorizontal="@dimen/_13pxh"
+                android:paddingVertical="@dimen/_13pxv"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_cart_cyan_300" tools:ignore="ContentDescription"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/rectangle_bg_name_cyan_300_radius_8"
+                android:ellipsize="end" android:fontFamily="@font/inter"
+                android:gravity="center" android:id="@+id/btnBuyNow"
+                android:layout_gravity="center_vertical"
+                android:layout_height="@dimen/_50pxv"
+                android:layout_width="@dimen/_266pxh"
+                android:paddingBottom="@dimen/_16pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_16pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_buy_now"
+                android:textAllCaps="false"
+                android:textColor="@color/{&quot;name&quot;:&quot;primary&quot;}"
+                android:textFontWeight="700"
+                android:textSize="@dimen/_14pxh"
+                android:textStyle="bold" tools:text="@string/lbl_buy_now"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

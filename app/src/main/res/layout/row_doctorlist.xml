@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="doctorlistRowModel" type="com.hissatsusapplication.app.modules.dashboard.data.model.DoctorlistRowModel"/>
+    </data>
+    <LinearLayout android:gravity="start" android:id="@+id/linearDoctor"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_10pxv"
+        android:paddingEnd="@dimen/_6pxh"
+        android:paddingStart="@dimen/_6pxh"
+        android:paddingTop="@dimen/_10pxv" style="@style/groupStyle{&quot;name&quot;:&quot;primary&quot;}cornerRadius">
+        <ImageView android:id="@+id/imageDrMarcusHorizo"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="@dimen/_68pxh"
+            android:layout_width="@dimen/_68pxh"
+            android:scaleType="centerCrop" circular="@{true}"
+            imageRes="@{@drawable/img_ellipse_27image}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse_27image"/>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtDrMarcusHorizo"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:text="@{doctorlistRowModel.txtDrMarcusHorizo}"
+            style="@style/txtIntersemibold12" tools:text="@string/msg_dr_marcus_horizo"/>
+        <TextView android:ellipsize="end"
+            android:id="@+id/txtChardiologist"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:text="@{doctorlistRowModel.txtChardiologist}"
+            style="@style/txtIntermedium10" tools:text="@string/lbl_chardiologist"/>
+        <LinearLayout android:id="@+id/linearEightyFive"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:orientation="horizontal">
+            <LinearLayout android:id="@+id/linearSixtySix"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageImage"
+                    android:layout_gravity="top"
+                    android:layout_height="@dimen/_10pxh"
+                    android:layout_width="@dimen/_10pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_signal"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_signal"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtRatting"
+                    android:layout_gravity="bottom"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{doctorlistRowModel.txtRatting}"
+                    style="@style/txtIntermedium8" tools:text="@string/lbl_4_7"/>
+            </LinearLayout>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtDistance"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{doctorlistRowModel.txtDistance}"
+                style="@style/txtIntermedium8_1" tools:text="@string/lbl_800m_away"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

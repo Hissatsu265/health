@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="dashboardVM" type="com.hissatsusapplication.app.modules.dashboard.data.viewmodel.DashboardVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearLearnMore"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyle{&quot;name&quot;:&quot;primary&quot;}">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppBar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <TextView android:id="@+id/txtFindYourDesire"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@{dashboardVM.dashboardModel.txtFindYourDesire}"
+                style="@style/txtIntersemibold24" tools:text="@string/msg_find_your_desire"/>
+            <ImageView android:id="@+id/imageUser"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_user"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_user"/>
+        </androidx.appcompat.widget.Toolbar>
+        <androidx.core.widget.NestedScrollView
+            android:clipToPadding="false" android:fillViewport="true"
+            android:gravity="center_horizontal"
+            android:id="@+id/scrollViewScrollView"
+            android:layout_height="0dp" android:layout_weight="1" android:layout_width="match_parent">
+            <LinearLayout android:id="@+id/linearDashboard"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <androidx.appcompat.widget.SearchView
+                    android:background="@drawable/rectangle_bg_name_gray_50_border_name_gray_50_01_radius_8"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/searchViewSearch"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:theme="@style/searchViewsearch"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@android:color/transparent"
+                    app:queryHint="@string/msg_search_doctor_drugs" app:searchIcon="@drawable/img_contrast"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:gravity="center_horizontal"
+                    android:id="@+id/recyclerThirtyList"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    itemSpace="@{@dimen/_17pxh}" tools:itemCount="4" tools:listitem="@layout/row_thirtylist"/>
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearOfferBanner"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_12pxv"
+                    android:paddingEnd="@dimen/_26pxh"
+                    android:paddingStart="@dimen/_26pxh"
+                    android:paddingTop="@dimen/_12pxv" style="@style/groupStyle{&quot;name&quot;:&quot;teal_50&quot;}cornerRadius">
+                    <TextView android:id="@+id/txtEarlyProtection"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:text="@{dashboardVM.dashboardModel.txtEarlyProtection}"
+                        style="@style/txtIntersemibold18" tools:text="@string/msg_early_protection"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:background="@drawable/rectangle_bg_name_cyan_300_radius_4"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/inter"
+                        android:gravity="center"
+                        android:id="@+id/btnLearnMore"
+                        android:layout_height="@dimen/_26pxv"
+                        android:layout_width="@dimen/_106pxh"
+                        android:paddingBottom="@dimen/_5pxv"
+                        android:paddingEnd="@dimen/_20pxh"
+                        android:paddingStart="@dimen/_20pxh"
+                        android:paddingTop="@dimen/_5pxv"
+                        android:singleLine="true"
+                        android:text="@string/lbl_learn_more"
+                        android:textAllCaps="false"
+                        android:textColor="@color/{&quot;name&quot;:&quot;primary&quot;}"
+                        android:textFontWeight="600"
+                        android:textSize="@dimen/_12pxh"
+                        android:textStyle="bold" tools:text="@string/lbl_learn_more"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearTopDoctorSeeAll"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtTopDoctor"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{dashboardVM.dashboardModel.txtTopDoctor}"
+                        style="@style/txtIntersemibold16" tools:text="@string/lbl_top_doctor"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtSeeAll"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{dashboardVM.dashboardModel.txtSeeAll}"
+                        style="@style/txtIntermedium12" tools:text="@string/lbl_see_all"/>
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:gravity="end"
+                    android:id="@+id/recyclerDoctorList"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    itemSpace="@{@dimen/_14pxh}" tools:itemCount="3" tools:listitem="@layout/row_doctorlist"/>
+                <LinearLayout android:id="@+id/linearHealthArticleSee"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtHealtArticle"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{dashboardVM.dashboardModel.txtHealtArticle}"
+                        style="@style/txtIntersemibold16" tools:text="@string/lbl_healt_article"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtSeeAll1"
+                        android:layout_gravity="top"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{dashboardVM.dashboardModel.txtSeeAll1}"
+                        style="@style/txtIntermedium12" tools:text="@string/lbl_see_all"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearArticleRow"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_5pxh"
+                    android:paddingVertical="@dimen/_5pxv" style="@style/groupStylecornerRadius">
+                    <ImageView android:id="@+id/imageThumbnail"
+                        android:layout_height="@dimen/_55pxh"
+                        android:layout_width="@dimen/_55pxh"
+                        android:scaleType="fitXY"
+                        cornerRadius="@{@dimen/_6pxh}"
+                        imageRes="@{@drawable/img_thumbnail}"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_thumbnail"/>
+                    <LinearLayout android:gravity="start"
+                        android:id="@+id/linearTheHealthiest"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" android:orientation="vertical">
+                        <TextView android:id="@+id/txtTheHealthiest"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:text="@{dashboardVM.dashboardModel.txtTheHealthiest}"
+                            style="@style/txtIntersemibold10" tools:text="@string/msg_the_25_healthiest"/>
+                        <LinearLayout android:id="@+id/linearDate"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content" android:orientation="horizontal">
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtDate"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{dashboardVM.dashboardModel.txtDate}"
+                                style="@style/txtIntermedium8_2" tools:text="@string/lbl_jun_10_2021"/>
+                            <View
+                                android:background="@drawable/rectangle_bg_name_gray_500_radius_1"
+                                android:id="@+id/viewView"
+                                android:layout_height="@dimen/_2pxh" android:layout_width="@dimen/_2pxh"/>
+                            <TextView android:ellipsize="end"
+                                android:id="@+id/txtTime"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:singleLine="true"
+                                android:text="@{dashboardVM.dashboardModel.txtTime}"
+                                style="@style/txtIntermedium8_2" tools:text="@string/lbl_5min_read"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="chatlistRowModel" type="com.hissatsusapplication.app.modules.message.data.model.ChatlistRowModel"/>
+    </data>
+    <LinearLayout android:gravity="center_vertical"
+        android:id="@+id/linearChat"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:orientation="horizontal">
+        <ImageView android:id="@+id/imageDrMarcusHorizon"
+            android:layout_gravity="center_vertical"
+            android:layout_height="@dimen/_50pxh"
+            android:layout_width="@dimen/_50pxh"
+            android:scaleType="centerCrop" circular="@{true}"
+            imageRes="@{@drawable/img_profile_thumbnail}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_profile_thumbnail"/>
+        <LinearLayout android:gravity="center_vertical"
+            android:id="@+id/linearDrMarcusHorizon"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearSeventyFive"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:orientation="vertical">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtDrMarcusHorizon"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{chatlistRowModel.txtDrMarcusHorizon}"
+                    style="@style/txtIntersemibold16" tools:text="@string/msg_dr_marcus_horizon"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtIDonTHaveAny"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{chatlistRowModel.txtIDonTHaveAny}"
+                    style="@style/txtInterregular12_1" tools:text="@string/msg_i_don_t_have_any2"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearTime"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:orientation="vertical">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtTime"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{chatlistRowModel.txtTime}"
+                    style="@style/txtInterregular12_2" tools:text="@string/lbl_10_24"/>
+                <ImageView android:id="@+id/imageImage"
+                    android:layout_gravity="end"
+                    android:layout_height="@dimen/_9pxh"
+                    android:layout_width="@dimen/_14pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_checkmark"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_checkmark"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
