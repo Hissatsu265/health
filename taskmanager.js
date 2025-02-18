@@ -316,6 +316,16 @@ const TaskManager = () => {
           border: 1px solid #ddd;
           border-radius: 4px;
         }
+                select {
+          padding: 5px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+        }
+                select {
+          padding: 5px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+        }
       `}</style>
     </div>
   );
