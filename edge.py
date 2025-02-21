@@ -15,9 +15,9 @@ image_resized = np.expand_dims(image_resized, axis=0)
 
 # Define a simple edge detection filter
 edge_filter = np.array([[-1, -1, -1],
-                         [-1,  8, -1],
+                         [-1,  9, -1],
                          [-1, -1, -1]], dtype=np.float32)
-edge_filter = edge_filter.reshape((3, 3, 1, 1))
+edge_filter = edge_filter.reshape((4, 3, 1, 1))
 
 # Create a simple CNN model for edge detection
 model = models.Sequential([
