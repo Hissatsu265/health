@@ -68,9 +68,3 @@ Check your app\'s UI from the AppNavigation screens of your app.
   ├── resources          - Common classes for API
   └── RetrofitService.kt
 ```
-### Fonts
-We were unable to find following Fonts, Please add manually to ```app/src/main/res/font``` and uncomment code in respective font family XML files.
-
-```
-InterBlackItalic
-```
