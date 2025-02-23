@@ -55,7 +55,7 @@ int main() {
     
     SimpleNeuralNetwork nn(2);
     nn.train(inputs, outputs, 5000, 0.1);
-    
+    std::cout << "Starting"<<std::endl;
     std::cout << "Predictions: " << std::endl;
     for (const auto& input : inputs) {
         std::cout << "Input: (" << input[0] << ", " << input[1] << ") -> Output: " << nn.predict(input) << std::endl;
