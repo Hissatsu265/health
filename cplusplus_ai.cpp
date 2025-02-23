@@ -1,4 +1,8 @@
-
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
 
 class SimpleNeuralNetwork {
 private:
