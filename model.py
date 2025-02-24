@@ -2,11 +2,6 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import torchvision.transforms as transforms
-import torchvision.models as models
-import pytorch_lightning as pl
-from torch.utils.data import Dataset, DataLoader
-from PIL import Image
-import os
 
 # Dataset tùy chỉnh
 class CustomImageDataset(Dataset):
