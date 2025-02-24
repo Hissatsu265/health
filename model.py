@@ -65,7 +65,7 @@ class CustomResNet(pl.LightningModule):
     
     def configure_optimizers(self):
         return optim.Adam(self.parameters(), lr=self.lr)
-
+print("start")
 # Transform ảnh
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
