@@ -7,7 +7,8 @@ from torch.utils.data import DataLoader
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
-# Load Pretrained ResNet18
+import torch.nn as nn
+
 class CNN_ResNet(nn.Module):
     def __init__(self, num_classes=10):
         super(CNN_ResNet, self).__init__()
