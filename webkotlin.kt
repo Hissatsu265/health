@@ -10,6 +10,7 @@ import io.ktor.routing.get
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+// jsfukDHFKU
 fun main() {
     embeddedServer(Netty, port = 8080) {
         install(DefaultHeaders)
@@ -25,6 +26,9 @@ fun main() {
             }
             get("/hello") {
                 call.respond(mapOf("greeting" to "Hello, World!"))
+            }
+            get("/hi") {
+                call.respond(mapOf("greeting" to "Hi, World!"))
             }
         }
     }.start(wait = true)
