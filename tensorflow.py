@@ -5,7 +5,6 @@ from tensorflow.keras.utils import to_categorical
 import matplotlib.pyplot as plt
 
 # Load dataset
-(x_train, y_train), (x_test, y_test) = mnist.load_data()
 
 # Preprocess data
 x_train, x_test = x_train / 255.0, x_test / 255.0  # Normalize to [0,1]
