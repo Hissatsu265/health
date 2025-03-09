@@ -3,8 +3,7 @@ from tensorflow.keras import layers, models
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-
-# Load a sample image
+import numpy as np# Load a sample image
 image_path = 'sample.jpg'  # Change to your image path
 image = cv2.imread(image_path)
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
