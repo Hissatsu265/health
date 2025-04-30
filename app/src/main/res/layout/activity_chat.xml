@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="chatVM" type="com.hissatsusapplication.app.modules.chat.data.viewmodel.ChatVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearMessage"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStyle{&quot;name&quot;:&quot;primary&quot;}">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppBar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <ImageView android:id="@+id/imageArrowLeft"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_arrow_left"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_arrow_left"/>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtDrMarcusHorizon"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{chatVM.chatModel.txtDrMarcusHorizon}"
+                style="@style/txtIntersemibold16" tools:text="@string/msg_dr_marcus_horizon"/>
+            <ImageView android:id="@+id/imageImage"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_group_266"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_group_266"/>
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearChat"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_42pxv"
+            android:paddingEnd="@dimen/_20pxh"
+            android:paddingStart="@dimen/_20pxh" android:paddingTop="@dimen/_42pxv">
+            <LinearLayout android:id="@+id/linearConsultionStart"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_14pxv"
+                android:paddingEnd="@dimen/_41pxh"
+                android:paddingStart="@dimen/_41pxh"
+                android:paddingTop="@dimen/_14pxv" style="@style/groupStylenameprimarycornerRadius_3">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtConsultionStart"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{chatVM.chatModel.txtConsultionStart}"
+                    style="@style/txtIntersemibold16_2" tools:text="@string/msg_consultion_start"/>
+                <TextView android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/txtYouCanConsult"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{chatVM.chatModel.txtYouCanConsult}"
+                    style="@style/txtIntermedium12_2" tools:text="@string/msg_you_can_consult"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearDoctorDetails"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageCircleImage"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_40pxh"
+                    android:layout_width="@dimen/_40pxh"
+                    android:scaleType="centerCrop" circular="@{true}"
+                    imageRes="@{@drawable/img_ellipse_27image_40x40}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse_27image_40x40"/>
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearThirtyOne"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:orientation="vertical">
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtDrMarcusHorizon1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:singleLine="true"
+                        android:text="@{chatVM.chatModel.txtDrMarcusHorizon1}"
+                        style="@style/txtIntersemibold14" tools:text="@string/msg_dr_marcus_horizon"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtTime"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{chatVM.chatModel.txtTime}"
+                        style="@style/txtIntermedium10" tools:text="@string/lbl_10_min_ago"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearChat1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_7pxv"
+                android:paddingEnd="@dimen/_15pxh"
+                android:paddingStart="@dimen/_15pxh"
+                android:paddingTop="@dimen/_7pxv" style="@style/groupStylenameteal_1">
+                <TextView android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/txtHelloHowCanI"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{chatVM.chatModel.txtHelloHowCanI}"
+                    style="@style/txtInterregular14" tools:text="@string/msg_hello_how_can_i"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearChat2"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_7pxv"
+                android:paddingEnd="@dimen/_14pxh"
+                android:paddingStart="@dimen/_14pxh"
+                android:paddingTop="@dimen/_7pxv" style="@style/groupStyle{&quot;name&quot;:&quot;teal_300&quot;}cornerRadius">
+                <TextView android:gravity="center_horizontal"
+                    android:id="@+id/txtDuration"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="@{chatVM.chatModel.txtDuration}"
+                    style="@style/txtInterregular14_1" tools:text="@string/msg_i_have_suffering"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearDoctorDetails1"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageCircleImage1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_40pxh"
+                    android:layout_width="@dimen/_40pxh"
+                    android:scaleType="centerCrop" circular="@{true}"
+                    imageRes="@{@drawable/img_ellipse_27image_40x40}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse_27image_40x40"/>
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearThirtySix"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:orientation="vertical">
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtDrMarcusHorizon2"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:singleLine="true"
+                        android:text="@{chatVM.chatModel.txtDrMarcusHorizon2}"
+                        style="@style/txtIntersemibold14" tools:text="@string/msg_dr_marcus_horizon"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtTime1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{chatVM.chatModel.txtTime1}"
+                        style="@style/txtIntermedium10" tools:text="@string/lbl_5_min_ago"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearChat3"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_6pxv"
+                android:paddingEnd="@dimen/_13pxh"
+                android:paddingStart="@dimen/_13pxh"
+                android:paddingTop="@dimen/_6pxv" style="@style/groupStylenameteal_1">
+                <TextView android:gravity="center_horizontal"
+                    android:id="@+id/txtOkDoYouHave"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="@{chatVM.chatModel.txtOkDoYouHave}"
+                    style="@style/txtInterregular14" tools:text="@string/msg_ok_do_you_have"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearIDonTHaveAny"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_6pxv"
+                android:paddingEnd="@dimen/_14pxh"
+                android:paddingStart="@dimen/_14pxh"
+                android:paddingTop="@dimen/_6pxv" style="@style/groupStyle{&quot;name&quot;:&quot;teal_300&quot;}cornerRadius">
+                <TextView android:id="@+id/txtIDonTHaveAny"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:text="@{chatVM.chatModel.txtIDonTHaveAny}"
+                    style="@style/txtInterregular14_1" tools:text="@string/msg_i_don_t_have_any"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearDoctorDetails2"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageCircleImage2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_40pxh"
+                    android:layout_width="@dimen/_40pxh"
+                    android:scaleType="centerCrop" circular="@{true}"
+                    imageRes="@{@drawable/img_ellipse_27image_40x40}"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_ellipse_27image_40x40"/>
+                <LinearLayout android:gravity="start"
+                    android:id="@+id/linearDrMarcusHorizon"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:orientation="vertical">
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtDrMarcusHorizon3"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:singleLine="true"
+                        android:text="@{chatVM.chatModel.txtDrMarcusHorizon3}"
+                        style="@style/txtIntersemibold14" tools:text="@string/msg_dr_marcus_horizon"/>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtTime2"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{chatVM.chatModel.txtTime2}"
+                        style="@style/txtIntermedium10" tools:text="@string/lbl_online"/>
+                </LinearLayout>
+            </LinearLayout>
+            <FrameLayout android:id="@+id/frameLoadingIcon"
+                android:layout_height="@dimen/_22pxv"
+                android:layout_width="@dimen/_58pxh"
+                android:paddingBottom="@dimen/_8pxv"
+                android:paddingEnd="@dimen/_13pxh"
+                android:paddingStart="@dimen/_13pxh"
+                android:paddingTop="@dimen/_8pxv" style="@style/groupStyle{&quot;name&quot;:&quot;gray_50_01&quot;}cornerRadius">
+                <ImageView android:id="@+id/imageImage1"
+                    android:layout_gravity="bottom|center"
+                    android:layout_height="@dimen/_5pxh"
+                    android:layout_width="@dimen/_32pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_group_141"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_group_141"/>
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical"
+            android:id="@+id/linearChatBox"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:orientation="horizontal">
+            <EditText
+                android:background="@drawable/rectangle_bg_name_gray_50_01_border_name_gray_50_01_radius_5"
+                android:drawablePadding="@dimen/_11pxh"
+                android:drawableStart="@drawable/img_attach"
+                android:ellipsize="end" android:fontFamily="@font/inter"
+                android:hint="@string/msg_type_message"
+                android:id="@+id/etMessage" android:inputType="text"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:paddingBottom="@dimen/_17pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_10pxh"
+                android:paddingTop="@dimen/_17pxv"
+                android:singleLine="true"
+                android:text="@={chatVM.chatModel.etMessageValue}"
+                android:textColor="@color/{&quot;name&quot;:&quot;blue_gray_300&quot;}"
+                android:textColorHint="@color/{&quot;name&quot;:&quot;blue_gray_300&quot;}"
+                android:textFontWeight="400"
+                android:textSize="@dimen/_12pxh"
+                android:textStyle="normal" tools:ignore="Autofill"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:background="@drawable/rectangle_bg_name_cyan_300_radius_8"
+                android:ellipsize="end" android:fontFamily="@font/inter"
+                android:gravity="center" android:id="@+id/btnSend"
+                android:layout_gravity="center_vertical"
+                android:layout_height="@dimen/_50pxv"
+                android:layout_width="@dimen/_111pxh"
+                android:paddingBottom="@dimen/_16pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_16pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_send"
+                android:textAllCaps="false"
+                android:textColor="@color/{&quot;name&quot;:&quot;primary&quot;}"
+                android:textFontWeight="700"
+                android:textSize="@dimen/_14pxh"
+                android:textStyle="bold" tools:text="@string/lbl_send"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

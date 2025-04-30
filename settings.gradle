@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "hissatsu265_s_application7"
