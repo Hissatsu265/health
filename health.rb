@@ -1,5 +1,13 @@
+# frozen_string_literal: true
 
+require 'date'
+require 'json'
+require 'logger'
+# frozen_string_literal: true
 
+require 'date'
+require 'json'
+require 'logger'
 module LibraryManagement
   class Book
     attr_reader :id, :title, :author, :isbn
