@@ -1,13 +1,4 @@
-import React, { useState, useEffect } from 'react';
 
-const TaskManager = () => {
-  const [tasks, setTasks] = useState(() => {
-    const savedTasks = localStorage.getItem('tasks');
-    return savedTasks ? JSON.parse(savedTasks) : [];
-  });
-  const [newTask, setNewTask] = useState('');
-  const [filter, setFilter] = useState('all'); // all, active, completed
-  const [editingId, setEditingId] = useState(null);
   const [editingText, setEditingText] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('date'); // date, priority
